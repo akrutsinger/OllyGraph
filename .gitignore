@@ -1,0 +1,7 @@
+bin/OllyGraph Copy and Run.bat
+obj/
+CppCheckResults.xml
+OllyGraph-v0.2.0.zip
+OllyGraph.depend
+OllyGraph.layout
+Visualization of Compiler Graphs - User Documentation v1.30.pdf

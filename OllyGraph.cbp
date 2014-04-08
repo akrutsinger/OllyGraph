@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="OllyGraph" />
+		<Option platforms="Windows;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/debug/OllyGraph" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i386" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-funsigned-char" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DUNICODE=1" />
+					<Add option="-DFIND_MEMORY_LEAKS" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library=".\libs\ollydbg.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/release/OllyGraph" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i386" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="-funsigned-char" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DUNICODE=1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="user32" />
+					<Add library=".\libs\ollydbg.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="src/GraphProcedures.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/GraphProcedures.h" />
+		<Unit filename="src/MemCheck.c">
+			<Option compilerVar="CC" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/MemCheck.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/OllyGraph.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/OllyGraph.h" />
+		<Unit filename="src/list.h" />
+		<Unit filename="src/plugin.h" />
+		<Unit filename="src/resource.h" />
+		<Unit filename="src/resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/settings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/settings.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
